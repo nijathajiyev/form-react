@@ -19,8 +19,8 @@ class App extends Component {
   }
 
   handleSubmit(form, formikMethods) {
-    console.log(form);
-
+    formikMethods.resetForm();
+    
     this.setState({
       fullName: form.fullName,
       email: form.email,
@@ -81,7 +81,7 @@ class App extends Component {
                   values.phone
                 )
               ){
-                errors.email = "Invalid phone";
+                errors.phone = "The number is not spelled correctly; correct spelling: +994516848797 or (+99451) 684-87-97";
               }
               return errors;
             }}
